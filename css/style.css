@@ -1,0 +1,289 @@
+/* =====================================================
+    RESET + VARIABLES
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #c3a36b;
+    --dark: #222;
+    --light: #ffffff;
+    --soft: #f6f4f1;
+}
+
+/* =====================================================
+    BASE
+===================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+    padding-top: 60px; /* nav fijo */
+}
+
+/* =====================================================
+    NAV (mobile-first)
+===================================================== */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0.5rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* underline hover */
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* =====================================================
+    HERO
+===================================================== */
+#hero {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url("../assets/img/hero.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+}
+
+.hero-date {
+    font-size: 1rem;
+}
+
+/* =====================================================
+    SECTIONS
+===================================================== */
+section {
+    padding: 3rem 1.2rem;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--soft);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+/* =====================================================
+    COUNTDOWN
+===================================================== */
+.countdown-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.countdown-container div {
+    text-align: center;
+}
+
+.countdown-container .number {
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+.countdown-container .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* =====================================================
+    BUTTONS
+===================================================== */
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 2.4rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--gold);
+    opacity: 0.15;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.btn:hover::after {
+    transform: scaleX(1);
+}
+
+.btn:hover {
+    color: white;
+}
+
+/* =====================================================
+    FORM
+===================================================== */
+form {
+    width: 100%;
+    max-width: 420px;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* =====================================================
+    FOOTER
+===================================================== */
+footer {
+    padding: 2rem;
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+/* =====================================================
+    ANIMATIONS
+===================================================== */
+header,
+section {
+    animation: fadeUp 0.9s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+    TABLET / LAPTOP
+===================================================== */
+@media (min-width: 768px) {
+    .main-nav a {
+        font-size: 0.8rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .countdown-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 700px;
+        margin: 2.5rem auto 0;
+    }
+}
+
+/* =====================================================
+    DESKTOP LARGE
+===================================================== */
+@media (min-width: 1200px) {
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
