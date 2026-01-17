@@ -222,6 +222,102 @@ textarea {
     resize: vertical;
 }
 
+/* =====================
+    TOAST MESSAGE
+===================== */
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    min-width: 280px;
+    max-width: 90%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 2000;
+    opacity: 0;
+    transition: all 0.45s ease;
+    box-shadow: 0 0 30px rgba(195,163,107,0.35);
+}
+
+/* éxito */
+.toast.success {
+    background-color: #ffffff;
+    border: 2px solid var(--gold);
+    color: var(--dark);
+}
+
+/* error */
+.toast.error {
+    background-color: #fff5f5;
+    border: 2px solid #e28c8c;
+    color: #8b1f1f;
+}
+
+/* visible */
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* fondo oscurecido */
+.toast::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+/* animación glow */
+@keyframes glow {
+    0% { box-shadow: 0 0 15px rgba(195,163,107,0.3); }
+    50% { box-shadow: 0 0 40px rgba(195,163,107,0.6); }
+    100% { box-shadow: 0 0 15px rgba(195,163,107,0.3); }
+}
+
+.toast.success.show {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* =====================
+    LOADER
+===================== */
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3000;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+
 /* =====================================================
     FOOTER
 ===================================================== */
@@ -231,6 +327,33 @@ footer {
     color: white;
     text-align: center;
 }
+
+/* =====================
+    REGALOS
+===================== */
+.regalos-box {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    animation: fadeUp 0.4s ease;
+}
+
+.copy-btn {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background-color: var(--gold);
+    color: white;
+}
+
 
 /* =====================================================
     ANIMATIONS

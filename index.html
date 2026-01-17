@@ -99,23 +99,31 @@
         <section id="regalos">
             <h2>Regalos</h2>
             <p>
-                El mejor regalo es que nos acompañes en este día tan especial.
-                Si deseás hacernos un obsequio, podés ayudarnos con nuestra luna de miel.
+                El mejor regalo es que nos acompañes.
+                Si deseás ayudarnos con nuestra luna de miel:
             </p>
 
-            <p class="alias">
-                Alias: <strong>Damaris.calvino</strong>
-            </p>
-            <p class="alias">
-                CBU: <strong>0000003100082975072172</strong>
-            </p>
+            <button class="btn" id="toggle-regalos">
+                Ver datos bancarios
+            </button>
 
+            <div id="datos-regalos" class="regalos-box hidden">
+                <p>
+                    Alias: <strong id="alias">Damaris.calvino</strong>
+                    <button class="copy-btn" data-copy="alias">Copiar</button>
+                </p>
+
+                <p>
+                    CBU: <strong id="cbu">0000003100082975072172</strong>
+                    <button class="copy-btn" data-copy="cbu">Copiar</button>
+                </p>
+            </div>
         </section>
+
 
         <!-- ===== CONFIRMACIÓN ===== -->
         <section id="confirmacion">
             <h2>Confirmación de asistencia</h2>
-
             <form id="rsvp-form">
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
@@ -148,6 +156,14 @@
 
                 <button type="submit" class="btn">Confirmar</button>
             </form>
+            <div id="toast" class="toast hidden"></div>
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Enviando confirmación...</p>
+            </div>
+
+
+
         </section>
 
     </main>
