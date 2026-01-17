@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />  <!-- codificacion de caracteres -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Damis & Thomy - Nuestra Boda</title> <!-- nombre de la página -->
+        <link rel="icon" type="image/png" href="assets/img/favicon.png"> <!-- icono de la página -->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <!-- Google Fonts (más adelante lo ajusto) -->
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
+    </head>
+
+    <body>
+
+    <!-- ===== HEADER / HERO ===== -->
+    <header id="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Nos casamos</p>
+            <h1 class="hero-title">Damis &amp; Thomy</h1>
+            <p class="hero-date">14/03/2026</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== CUENTA REGRESIVA ===== -->
+        <section id="countdown">
+            <h2>Falta muy poco</h2>
+            <div class="countdown-container">
+                <div>
+                    <span class="number">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <div>
+                    <span class="number">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div>
+                    <span class="number">00</span>
+                    <span class="label">Minutos</span>
+                </div>
+                <div>
+                    <span class="number">00</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CEREMONIA ===== -->
+        <section id="ceremonia">
+            <h2>Ceremonia</h2>
+            <p class="ceremonia-fecha">14 de Marzo</p>
+            <p class="ceremonia-hora">13:30hs</p>
+            <p class="ceremonia-lugar">Iglesia Transparente, Tinogasta 5150, Villa Real, CABA</p>
+
+            <a href="https://www.google.com/maps/dir//C1408BGK,+Tinogasta+5850,+C1408+BGK,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6259456,-58.5259953,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
+            target="_blank" rel="noopener noreferrer" class="btn">Ver ubicación</a>
+        </section>
+
+        <!-- ===== BRINDIS ===== -->
+        <section id="brindis">
+            <h2>Brindis</h2>
+            <p class="brindis-hora">Al finalizar la ceremonia compartiremos un brindis</p>
+        </section>
+
+        <!-- ===== FIESTA ===== -->
+        <section id="fiesta">
+            <h2>Fiesta</h2>
+            <p class="fiesta-hora">Después de la ceremonia y el brindis</p>
+            <p class="fiesta-lugar">Espacio Echague, La Lonja, Pilar</p>
+
+            <a href="https://www.google.com/maps/dir/Iglesia+Transparente,+Tinogasta,+BGK,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires/Echag%C3%BCe+Catering,+El+Palenque,+La+Lonja,+Provincia+de+Buenos+Aires/@-34.52821,-58.8601867,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965!1m5!1m1!1s0x95bc9d49e4a0142d:0xd57d4004d129082!2m2!1d-58.8537232!2d-34.4529406?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" 
+            target="_blank" rel="noopener noreferrer" class="btn">Ver ubicación</a>
+        </section>
+
+        <!-- ===== DRESS CODE ===== -->
+        <section id="dress-code">
+            <h2>Dress Code</h2>
+            <p>Elegante</p>
+        </section>
+
+        <!-- ===== REGALOS ===== -->
+        <section id="regalos">
+            <h2>Regalos</h2>
+            <p>
+                El mejor regalo es que nos acompañes en este día tan especial.
+                Si deseás hacernos un obsequio, podés ayudarnos con nuestra luna de miel.
+            </p>
+
+            <p class="alias">
+                Alias: <strong>Damaris.calvino</strong>
+            </p>
+            <p class="alias">
+                CBU: <strong>0000003100082975072172</strong>
+            </p>
+
+        </section>
+
+        <!-- ===== CONFIRMACIÓN ===== -->
+        <section id="confirmacion">
+            <h2>Confirmación de asistencia</h2>
+
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="asistencia">¿Asistís?</label>
+                    <select id="asistencia" name="asistencia" required>
+                        <option value="">Seleccionar</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alimentacion">Alimentación</label>
+                    <select id="alimentacion" name="alimentacion">
+                        <option value="normal">Regular</option>
+                        <option value="vegetariano">Vegetariano/a</option>
+                        <option value="vegano">Vegano/a</option>
+                        <option value="celiaco">Celíaco/a</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios (opcional)</label>
+                    <textarea id="comentarios" name="comentarios" placeholder="Aclaraciones, alergias, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Confirmar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>Con amor, Damis &amp; Thomy</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    </body>
+</html>
