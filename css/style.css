@@ -8,11 +8,14 @@
 }
 
 :root {
-    --gold: #c3a36b;
-    --dark: #222;
-    --light: #ffffff;
-    --soft: #f6f4f1;
+    --primary: #8b5e3c;   /* marrón cálido */
+    --secondary: #c9a66b; /* dorado */
+    --background: #f6f2ed; /* beige claro */  
+    --text-dark: #2e2e2e;
+    --text-light: #ffffff;
+    --accent: #e6d3b1;
 }
+
 
 /* =====================================================
     BASE
@@ -108,6 +111,7 @@ body {
     font-size: 1rem;
 }
 
+
 /* =====================================================
     SECTIONS
 ===================================================== */
@@ -123,6 +127,13 @@ section:nth-child(even) {
 h2 {
     font-size: 1.6rem;
     margin-bottom: 1.2rem;
+    color: #c9a66b;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: #c9a66b;
 }
 
 p {
