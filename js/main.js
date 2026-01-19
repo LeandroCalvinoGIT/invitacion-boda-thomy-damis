@@ -1,3 +1,23 @@
+// SCROLL FADEUP
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".animate-on-scroll").forEach(el => {
+        observer.observe(el);
+    });
+});
+
+
+
 // COUNTDOWN
 const weddingDate = new Date("2026-03-14T18:00:00").getTime();
 
@@ -24,7 +44,49 @@ setInterval(() => {
 }, 1000);
 
 
+// CARROUSEL
+document.querySelectorAll(".carousel").forEach(carousel => {
+    const track = carousel.querySelector(".carousel-track");
+    let slides = Array.from(track.children);
+    let index = 0;
+    let slideWidth = slides[0].getBoundingClientRect().width;
 
+    function cloneSlides() {
+        slides.forEach(slide => {
+            track.appendChild(slide.cloneNode(true));
+        });
+    }
+
+    cloneSlides();
+
+    function updateSizes() {
+        slides = Array.from(track.children);
+        slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    function move() {
+        index++;
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        if (index >= slides.length / 2) {
+            setTimeout(() => {
+                track.style.transition = "none";
+                index = 0;
+                track.style.transform = "translateX(0)";
+                track.offsetHeight;
+                track.style.transition = "transform 0.6s ease";
+            }, 600);
+        }
+    }
+
+    setInterval(move, 3500);
+    window.addEventListener("resize", updateSizes);
+});
+
+
+
+// CONFIRMAR ASISTENCIA
 
 const form = document.getElementById("rsvp-form");
 const toast = document.getElementById("toast");

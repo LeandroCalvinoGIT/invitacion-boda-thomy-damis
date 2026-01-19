@@ -10,10 +10,13 @@
 :root {
     --primary: #8b5e3c;   /* marrón cálido */
     --secondary: #c9a66b; /* dorado */
+    --gold: #c9a66b;
     --background: #f6f2ed; /* beige claro */  
     --text-dark: #2e2e2e;
     --text-light: #ffffff;
+    --light: #ffffff;
     --accent: #e6d3b1;
+    --soft: #f1ece5;
     --dark: #2e2e2e
 }
 
@@ -23,9 +26,12 @@
 ===================================================== */
 html {
     scroll-behavior: smooth;
+    overscroll-behavior: none;
 }
 
 body {
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
     font-family: 'Georgia', serif;
     color: var(--dark);
     background-color: var(--light);
@@ -117,12 +123,15 @@ body {
     SECTIONS
 ===================================================== */
 section {
-    padding: 3rem 1.2rem;
+    padding: 2.2rem 1.2rem;
     text-align: center;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
     background-color: var(--soft);
+    border-radius: 32px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -142,29 +151,7 @@ p {
     margin-bottom: 0.8rem;
 }
 
-/* =====================================================
-    COUNTDOWN
-===================================================== */
-.countdown-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-    margin-top: 2rem;
-}
 
-.countdown-container div {
-    text-align: center;
-}
-
-.countdown-container .number {
-    font-size: 1.8rem;
-    color: var(--gold);
-}
-
-.countdown-container .label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-}
 
 /* =====================================================
     BUTTONS
@@ -370,10 +357,10 @@ footer {
 /* =====================================================
     ANIMATIONS
 ===================================================== */
-header,
+/* header,
 section {
     animation: fadeUp 0.9s ease both;
-}
+} */
 
 @keyframes fadeUp {
     from {
@@ -399,17 +386,11 @@ section {
     }
 
     section {
-        padding: 4rem 2rem;
+        padding: 3rem 1.5rem;
     }
 
     h2 {
         font-size: 2rem;
-    }
-
-    .countdown-container {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 700px;
-        margin: 2.5rem auto 0;
     }
 }
 
@@ -417,8 +398,113 @@ section {
     DESKTOP LARGE
 ===================================================== */
 @media (min-width: 1200px) {
-    section {
+    section:not(.carousel) {
+        padding: 3.5rem 2rem;
         max-width: 1100px;
         margin: 0 auto;
     }
+}
+
+/* =====================================================
+    COUNTDOWN
+===================================================== */
+#countdown {
+    text-align: center;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.countdown-container div {
+    background: var(--light);
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+    min-width: 90px;
+}
+
+.countdown-container .number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.countdown-container .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* =====================
+    CAROUSEL
+===================== */
+.carousel {
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.carousel-viewport {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.carousel-track {
+    display: flex;
+    will-change: transform;
+    transition: transform 0.6s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    padding: 8px;
+}
+
+.carousel-slide img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* ===== BREAKPOINTS ===== */
+@media (max-width: 479px) {
+    .carousel-slide { width: 100%; }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .carousel-slide { width: 50%; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-slide { width: 33.333%; }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .carousel-slide { width: 25%; }
+}
+
+@media (min-width: 1400px) {
+    .carousel-slide { width: 20%; } /* 5 imágenes */
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#confirmacion button[type="submit"] {
+    display: block;
+    margin: 2rem auto 0;
 }

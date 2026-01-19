@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8" />  <!-- codificacion de caracteres -->
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Damis & Thomy - Nuestra Boda</title> <!-- nombre de la página -->
-        <link rel="icon" type="image/png" href="assets/img/favicon.png"> <!-- icono de la página -->
-
-        <!-- CSS -->
+        <title>Damis & Thomy - Nuestra Boda</title>
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
         <link rel="stylesheet" href="css/style.css" />
-
-        <!-- Google Fonts (más adelante lo ajusto) -->
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-
     </head>
 
     <body>
@@ -32,113 +25,132 @@
             <li><a href="#hero">Inicio</a></li>
             <li><a href="#ceremonia">Evento</a></li>
             <li><a href="#regalos">Regalos</a></li>
-            <li><a href="#confirmacion">Confirmar</a></li>
+            <li><a href="#confirmacion">Asistencia</a></li>
         </ul>
     </nav>
 
     <main>
 
         <!-- ===== CUENTA REGRESIVA ===== -->
-        <section id="countdown">
-            <h2>Se acerca el gran día</h2>
+        <section id="countdown" class="animate-on-scroll">
+            <h2>¡Se acerca el gran día!</h2>
             <div class="countdown-container">
-                <div>
-                    <span class="number" id="days">00</span>
-                    <span class="label">Días</span>
-                </div>
-                <div>
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Horas</span>
-                </div>
-                <div>
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Minutos</span>
-                </div>
-                <div>
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Segundos</span>
+                <div><span class="number" id="days">00</span><span class="label">Días</span></div>
+                <div><span class="number" id="hours">00</span><span class="label">Horas</span></div>
+                <div><span class="number" id="minutes">00</span><span class="label">Minutos</span></div>
+                <div><span class="number" id="seconds">00</span><span class="label">Segundos</span></div>
+            </div>
+        </section>
+
+        <!-- ===== CARROUSEL ===== -->
+        <section class="carousel">
+            <div class="animate-on-scroll">
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== CEREMONIA ===== -->
-        <section id="ceremonia">
+        <section id="ceremonia" class="animate-on-scroll">
             <img src="assets/img/favicon.png" alt="">
             <h2>Ceremonia</h2>
             <p class="ceremonia-fecha">14 de Marzo 2026</p>
             <p class="ceremonia-hora">13:30 hs</p>
             <p class="ceremonia-lugar">Iglesia Transparente</p>
             <p>Tinogasta 5150 - Villa Real - CABA</p>
-
-            <a href="https://www.google.com/maps/dir//C1408BGK,+Tinogasta+5850,+C1408+BGK,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6259456,-58.5259953,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
-            target="_blank" rel="noopener noreferrer" class="btn">Ver ubicación</a>
+            <a href="https://www.google.com/maps/dir//C1408BGK,+Tinogasta+5850,+C1408+BGK,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6259456,-58.5259953,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" class="btn">Ver ubicación</a>
         </section>
 
         <!-- ===== BRINDIS ===== -->
-        <section id="brindis">
+        <section id="brindis" class="animate-on-scroll">
             <img src="assets/img/brindis.jpg" alt="">
             <h2>Brindis</h2>
-            <p class="brindis-hora">Al finalizar la ceremonia compartiremos un brindis en el hall de la iglesia.</p>
+            <p>Al finalizar la ceremonia compartiremos un brindis en el hall de la iglesia.</p>
         </section>
 
         <!-- ===== FIESTA ===== -->
-        <section id="fiesta">
+        <section id="fiesta" class="animate-on-scroll">
             <img src="assets/img/novioynovia.jpg" alt="">
             <h2>Fiesta</h2>
-            <p class="fiesta-hora">Finalizado el brindis, nos vamos acercando al espacio donde compartiremos la fiesta:</p>
+            <p>Finalizado el brindis, nos vamos acercando al espacio donde compartiremos la fiesta:</p>
             <p class="fiesta-lugar">Espacio Echague, La Lonja, Pilar</p>
+            <a href="https://www.google.com/maps/dir/Iglesia+Transparente,+Tinogasta,+BGK,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires/Echag%C3%BCe+Catering,+El+Palenque,+La+Lonja,+Provincia+de+Buenos+Aires/@-34.52821,-58.8601867,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965!1m5!1m1!1s0x95bc9d49e4a0142d:0xd57d4004d129082!2m2!1d-58.8537232!2d-34.4529406?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" class="btn">Ver ubicación</a>
+        </section>
 
-            <a href="https://www.google.com/maps/dir/Iglesia+Transparente,+Tinogasta,+BGK,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires/Echag%C3%BCe+Catering,+El+Palenque,+La+Lonja,+Provincia+de+Buenos+Aires/@-34.52821,-58.8601867,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965!1m5!1m1!1s0x95bc9d49e4a0142d:0xd57d4004d129082!2m2!1d-58.8537232!2d-34.4529406?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" 
-            target="_blank" rel="noopener noreferrer" class="btn">Ver ubicación</a>
+        <!-- ===== CARROUSEL ===== -->
+        <section class="carousel">
+            <div class="animate-on-scroll">
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REGALOS ===== --> 
+        <section id="regalos"> 
+            <img src="assets/img/regalo.jpg" alt=""> 
+            <h2>Regalos</h2> 
+            <p> El mejor regalo es que nos acompañes en nuestro día 💛
+                Si querés hacernos un obsequio, podés contribuir a nuestra luna de miel 
+            </p> 
+            <button class="btn" id="toggle-regalos"> Ver datos bancarios </button> 
+            <div id="datos-regalos" class="regalos-box hidden"> 
+                <p> Alias: <strong id="alias">Damaris.calvino</strong> 
+                <button class="copy-btn" data-copy="alias">Copiar</button> 
+                </p> <p> CBU: <strong id="cbu">0000003100082975072172</strong> 
+                <button class="copy-btn" data-copy="cbu">Copiar</button> </p> 
+            </div> 
         </section>
 
         <!-- ===== DRESS CODE ===== -->
-        <section id="dress-code">
+        <section id="dress-code" class="animate-on-scroll">
             <img src="assets/img/monio.jpg" alt="">
             <h2>Dress Code</h2>
             <p>Elegante</p>
         </section>
 
-        <!-- ===== REGALOS ===== -->
-        <section id="regalos">
-            <img src="assets/img/regalo.jpg" alt="">
-            <h2>Regalos</h2>
-            <p>
-                El mejor regalo es que nos acompañes en nuestro día.
-                Si querés hacernos un obsequio, podés contribuir a nuestra luna de miel
-            </p>
-
-            <button class="btn" id="toggle-regalos">
-                Ver datos bancarios
-            </button>
-
-            <div id="datos-regalos" class="regalos-box hidden">
-                <p>
-                    Alias: <strong id="alias">Damaris.calvino</strong>
-                    <button class="copy-btn" data-copy="alias">Copiar</button>
-                </p>
-
-                <p>
-                    CBU: <strong id="cbu">0000003100082975072172</strong>
-                    <button class="copy-btn" data-copy="cbu">Copiar</button>
-                </p>
+        <!-- ===== CARROUSEL ===== -->
+        <section class="carousel">
+            <div class="animate-on-scroll">
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
+                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-
         <!-- ===== CONFIRMACIÓN ===== -->
-        <section id="confirmacion">
+        <section id="confirmacion" class="animate-on-scroll">
             <h2>Confirmación de asistencia</h2>
             <h3>Antes del 14/02/2026</h3>
+
             <form id="rsvp-form">
                 <div class="form-group">
                     <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" name="nombre" required />
+                    <input type="text" id="nombre" required>
                 </div>
 
                 <div class="form-group">
                     <label for="asistencia">¿Asistís?</label>
-                    <select id="asistencia" name="asistencia" required>
+                    <select id="asistencia" required>
                         <option value="">Seleccionar</option>
                         <option value="si">Sí</option>
                         <option value="no">No</option>
@@ -147,7 +159,7 @@
 
                 <div class="form-group">
                     <label for="alimentacion">Alimentación</label>
-                    <select id="alimentacion" name="alimentacion">
+                    <select id="alimentacion">
                         <option value="normal">Regular</option>
                         <option value="vegetariano">Vegetariano/a</option>
                         <option value="vegano">Vegano/a</option>
@@ -156,30 +168,29 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="comentarios">Comentarios (opcional)</label>
-                    <textarea id="comentarios" name="comentarios" placeholder="Aclaraciones, alergias, etc."></textarea>
+                    <label for="comentarios">Comentarios</label>
+                    <textarea id="comentarios" placeholder="Aclaraciones, Alergias, etc."></textarea>
                 </div>
 
                 <button type="submit" class="btn">Confirmar</button>
             </form>
-            <div id="toast" class="toast hidden"></div>
+
+            <!-- mensaje de espera -->
             <div id="loader" class="loader hidden">
                 <div class="spinner"></div>
                 <p>Enviando confirmación...</p>
             </div>
-
-
-
         </section>
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>Con amor, Damis &amp; Thomy</p>
+        <p>Con amor, Damis &amp; Thomy 💛</p>
     </footer>
 
-    <!-- JS -->
+    <!-- mensaje de confirmacion -->
+    <div id="toast" class="toast hidden"></div>
+
     <script src="js/main.js"></script>
     </body>
 </html>
