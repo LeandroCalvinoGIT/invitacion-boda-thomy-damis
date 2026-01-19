@@ -1,3 +1,31 @@
+// COUNTDOWN
+const weddingDate = new Date("2026-03-14T18:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+        document.getElementById("countdown").innerHTML = 
+        "<p>¡Llegó el gran día! 💍</p>";
+        return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+}, 1000);
+
+
+
+
 const form = document.getElementById("rsvp-form");
 const toast = document.getElementById("toast");
 const loader = document.getElementById("loader");
