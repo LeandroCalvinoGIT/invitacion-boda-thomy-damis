@@ -89,7 +89,7 @@ body {
     HERO
 ===================================================== */
 #hero {
-    min-height: 100vh;
+    min-height: 110vh;
     background: linear-gradient(
         rgba(0,0,0,0.45),
         rgba(0,0,0,0.45)

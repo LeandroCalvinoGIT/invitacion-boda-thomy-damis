@@ -1,196 +1,264 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Damis & Thomy - Nuestra Boda</title>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Invitación al casamiento de Damis y Thomy"
+    />
+    <!-- OTROS -->
+    <title>Damis & Thomy - Nuestra Boda</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
 
-    <body>
-
+  <body>
     <!-- ===== HEADER / HERO ===== -->
     <header id="hero">
-        <div class="hero-content">
-            <p class="hero-subtitle">¡Nos casamos!</p>
-            <h1 class="hero-title">Damis &amp; Thomy</h1>
-            <p class="hero-date">14/03/2026</p>
-        </div>
+      <div class="hero-content">
+        <p class="hero-subtitle">¡Nos casamos!</p>
+        <h1 class="hero-title">Damis &amp; Thomy</h1>
+        <p class="hero-date">14/03/2026</p>
+      </div>
     </header>
 
     <!-- ===== NAVEGADOR ===== -->
     <nav class="main-nav">
-        <ul>
-            <li><a href="#hero">Inicio</a></li>
-            <li><a href="#ceremonia">Evento</a></li>
-            <li><a href="#regalos">Regalos</a></li>
-            <li><a href="#confirmacion">Asistencia</a></li>
-        </ul>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#ceremonia">Evento</a></li>
+        <li><a href="#regalos">Regalos</a></li>
+        <li><a href="#confirmacion">Asistencia</a></li>
+      </ul>
     </nav>
 
     <main>
+      <!-- ===== CUENTA REGRESIVA ===== -->
+      <section id="countdown" class="animate-on-scroll">
+        <h2>¡Se acerca el gran día!</h2>
+        <div class="countdown-container">
+          <div>
+            <span class="number" id="days">00</span>
+            <span class="label">Días</span>
+          </div>
+          <div>
+            <span class="number" id="hours">00</span>
+            <span class="label">Horas</span>
+          </div>
+          <div>
+            <span class="number" id="minutes">00</span>
+            <span class="label">Minutos</span>
+          </div>
+          <div>
+            <span class="number" id="seconds">00</span>
+            <span class="label">Segundos</span>
+          </div>
+        </div>
+      </section>
 
-        <!-- ===== CUENTA REGRESIVA ===== -->
-        <section id="countdown" class="animate-on-scroll">
-            <h2>¡Se acerca el gran día!</h2>
-            <div class="countdown-container">
-                <div><span class="number" id="days">00</span><span class="label">Días</span></div>
-                <div><span class="number" id="hours">00</span><span class="label">Horas</span></div>
-                <div><span class="number" id="minutes">00</span><span class="label">Minutos</span></div>
-                <div><span class="number" id="seconds">00</span><span class="label">Segundos</span></div>
+      <!-- ===== CARROUSEL #1 ===== -->
+      <section class="carousel">
+        <div class="animate-on-scroll">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="assets/img/foto1.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/foto2.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/foto3.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/foto4.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/foto5.jpg" />
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- ===== CARROUSEL ===== -->
-        <section class="carousel">
-            <div class="animate-on-scroll">
-                <div class="carousel-viewport">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
-                    </div>
-                </div>
+      <!-- ===== CEREMONIA ===== -->
+      <section id="ceremonia" class="animate-on-scroll">
+        <img src="assets/img/favicon.png" alt="" />
+        <h2>Ceremonia</h2>
+        <p class="ceremonia-fecha">14 de Marzo 2026</p>
+        <p class="ceremonia-hora">13:30 hs</p>
+        <p class="ceremonia-lugar">Iglesia Transparente</p>
+        <p>Tinogasta 5150 - Villa Real - CABA</p>
+        <a
+          href="https://www.google.com/maps/dir//C1408BGK,+Tinogasta+5850,+C1408+BGK,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6259456,-58.5259953,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
+          target="_blank"
+          class="btn"
+          >Ver ubicación</a
+        >
+      </section>
+
+      <!-- ===== BRINDIS ===== -->
+      <section id="brindis" class="animate-on-scroll">
+        <img src="assets/img/brindis.jpg" alt="" />
+        <h2>Brindis</h2>
+        <p>
+          Al finalizar la ceremonia compartiremos un brindis en el hall de la
+          iglesia.
+        </p>
+      </section>
+
+      <!-- ===== FIESTA ===== -->
+      <section id="fiesta" class="animate-on-scroll">
+        <img src="assets/img/novioynovia.jpg" alt="" />
+        <h2>Fiesta</h2>
+        <p>
+          Finalizado el brindis, nos vamos acercando al espacio donde
+          compartiremos la fiesta:
+        </p>
+        <p class="fiesta-lugar">Espacio Echague, La Lonja, Pilar</p>
+        <a
+          href="https://www.google.com/maps/dir/Iglesia+Transparente,+Tinogasta,+BGK,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires/Echag%C3%BCe+Catering,+El+Palenque,+La+Lonja,+Provincia+de+Buenos+Aires/@-34.52821,-58.8601867,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965!1m5!1m1!1s0x95bc9d49e4a0142d:0xd57d4004d129082!2m2!1d-58.8537232!2d-34.4529406?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
+          target="_blank"
+          class="btn"
+          >Ver ubicación</a
+        >
+      </section>
+
+      <!-- ===== CARROUSEL #2===== -->
+      <section class="carousel">
+        <div class="animate-on-scroll">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="assets/img/foto6.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-1939.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-3483.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-3685.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-4499.jpg" />
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- ===== CEREMONIA ===== -->
-        <section id="ceremonia" class="animate-on-scroll">
-            <img src="assets/img/favicon.png" alt="">
-            <h2>Ceremonia</h2>
-            <p class="ceremonia-fecha">14 de Marzo 2026</p>
-            <p class="ceremonia-hora">13:30 hs</p>
-            <p class="ceremonia-lugar">Iglesia Transparente</p>
-            <p>Tinogasta 5150 - Villa Real - CABA</p>
-            <a href="https://www.google.com/maps/dir//C1408BGK,+Tinogasta+5850,+C1408+BGK,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6259456,-58.5259953,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" target="_blank" class="btn">Ver ubicación</a>
-        </section>
+      <!-- ===== REGALOS ===== -->
+      <section id="regalos">
+        <img src="assets/img/regalo.jpg" alt="" />
+        <h2>Regalos</h2>
+        <p>
+          El mejor regalo es que nos acompañes en nuestro día 💛 Si querés
+          hacernos un obsequio, podés contribuir a nuestra luna de miel
+        </p>
+        <button class="btn" id="toggle-regalos">Ver datos bancarios</button>
+        <div id="datos-regalos" class="regalos-box hidden">
+          <p>
+            Alias: <strong id="alias">Damaris.calvino</strong>
+            <button class="copy-btn" data-copy="alias">Copiar</button>
+          </p>
+          <p>
+            CBU: <strong id="cbu">0000003100082975072172</strong>
+            <button class="copy-btn" data-copy="cbu">Copiar</button>
+          </p>
+        </div>
+      </section>
 
-        <!-- ===== BRINDIS ===== -->
-        <section id="brindis" class="animate-on-scroll">
-            <img src="assets/img/brindis.jpg" alt="">
-            <h2>Brindis</h2>
-            <p>Al finalizar la ceremonia compartiremos un brindis en el hall de la iglesia.</p>
-        </section>
+      <!-- ===== DRESS CODE ===== -->
+      <section id="dress-code" class="animate-on-scroll">
+        <img src="assets/img/monio.jpg" alt="" />
+        <h2>Dress Code</h2>
+        <p>Elegante</p>
+      </section>
 
-        <!-- ===== FIESTA ===== -->
-        <section id="fiesta" class="animate-on-scroll">
-            <img src="assets/img/novioynovia.jpg" alt="">
-            <h2>Fiesta</h2>
-            <p>Finalizado el brindis, nos vamos acercando al espacio donde compartiremos la fiesta:</p>
-            <p class="fiesta-lugar">Espacio Echague, La Lonja, Pilar</p>
-            <a href="https://www.google.com/maps/dir/Iglesia+Transparente,+Tinogasta,+BGK,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires/Echag%C3%BCe+Catering,+El+Palenque,+La+Lonja,+Provincia+de+Buenos+Aires/@-34.52821,-58.8601867,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x95bcc8212a295143:0x35f5ee92e8cd8fda!2m2!1d-58.5259052!2d-34.6217965!1m5!1m1!1s0x95bc9d49e4a0142d:0xd57d4004d129082!2m2!1d-58.8537232!2d-34.4529406?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" class="btn">Ver ubicación</a>
-        </section>
-
-        <!-- ===== CARROUSEL ===== -->
-        <section class="carousel">
-            <div class="animate-on-scroll">
-                <div class="carousel-viewport">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
-                    </div>
-                </div>
+      <!-- ===== CARROUSEL #3===== -->
+      <section class="carousel">
+        <div class="animate-on-scroll">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-4404.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-6713.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-7262.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-8097.jpg" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/img/Tezza-1939.jpg" />
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- ===== REGALOS ===== --> 
-        <section id="regalos"> 
-            <img src="assets/img/regalo.jpg" alt=""> 
-            <h2>Regalos</h2> 
-            <p> El mejor regalo es que nos acompañes en nuestro día 💛
-                Si querés hacernos un obsequio, podés contribuir a nuestra luna de miel 
-            </p> 
-            <button class="btn" id="toggle-regalos"> Ver datos bancarios </button> 
-            <div id="datos-regalos" class="regalos-box hidden"> 
-                <p> Alias: <strong id="alias">Damaris.calvino</strong> 
-                <button class="copy-btn" data-copy="alias">Copiar</button> 
-                </p> <p> CBU: <strong id="cbu">0000003100082975072172</strong> 
-                <button class="copy-btn" data-copy="cbu">Copiar</button> </p> 
-            </div> 
-        </section>
+      <!-- ===== CONFIRMACIÓN ===== -->
+      <section id="confirmacion" class="animate-on-scroll">
+        <h2>Confirmación de asistencia</h2>
+        <h3>Antes del 14/02/2026</h3>
 
-        <!-- ===== DRESS CODE ===== -->
-        <section id="dress-code" class="animate-on-scroll">
-            <img src="assets/img/monio.jpg" alt="">
-            <h2>Dress Code</h2>
-            <p>Elegante</p>
-        </section>
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" required />
+          </div>
 
-        <!-- ===== CARROUSEL ===== -->
-        <section class="carousel">
-            <div class="animate-on-scroll">
-                <div class="carousel-viewport">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="assets/img/foto1.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto2.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto3.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto4.jpg"></div>
-                        <div class="carousel-slide"><img src="assets/img/foto5.jpg"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <div class="form-group">
+            <label for="asistencia">¿Asistís?</label>
+            <select id="asistencia" required>
+              <option value="">Seleccionar</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
 
-        <!-- ===== CONFIRMACIÓN ===== -->
-        <section id="confirmacion" class="animate-on-scroll">
-            <h2>Confirmación de asistencia</h2>
-            <h3>Antes del 14/02/2026</h3>
+          <div class="form-group">
+            <label for="alimentacion">Alimentación</label>
+            <select id="alimentacion">
+              <option value="normal">Regular</option>
+              <option value="vegetariano">Vegetariano/a</option>
+              <option value="vegano">Vegano/a</option>
+              <option value="celiaco">Celíaco/a</option>
+            </select>
+          </div>
 
-            <form id="rsvp-form">
-                <div class="form-group">
-                    <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" required>
-                </div>
+          <div class="form-group">
+            <label for="comentarios">Comentarios</label>
+            <textarea
+              id="comentarios"
+              placeholder="Aclaraciones, Alergias, etc."
+            ></textarea>
+          </div>
 
-                <div class="form-group">
-                    <label for="asistencia">¿Asistís?</label>
-                    <select id="asistencia" required>
-                        <option value="">Seleccionar</option>
-                        <option value="si">Sí</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
+          <button type="submit" class="btn">Confirmar</button>
+        </form>
 
-                <div class="form-group">
-                    <label for="alimentacion">Alimentación</label>
-                    <select id="alimentacion">
-                        <option value="normal">Regular</option>
-                        <option value="vegetariano">Vegetariano/a</option>
-                        <option value="vegano">Vegano/a</option>
-                        <option value="celiaco">Celíaco/a</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="comentarios">Comentarios</label>
-                    <textarea id="comentarios" placeholder="Aclaraciones, Alergias, etc."></textarea>
-                </div>
-
-                <button type="submit" class="btn">Confirmar</button>
-            </form>
-
-            <!-- mensaje de espera -->
-            <div id="loader" class="loader hidden">
-                <div class="spinner"></div>
-                <p>Enviando confirmación...</p>
-            </div>
-        </section>
-
+        <!-- mensaje de espera -->
+        <div id="loader" class="loader hidden">
+          <div class="spinner"></div>
+          <p>Enviando confirmación...</p>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>Con amor, Damis &amp; Thomy 💛</p>
+      <p>Con amor, Damis &amp; Thomy 💛</p>
     </footer>
 
     <!-- mensaje de confirmacion -->
     <div id="toast" class="toast hidden"></div>
-
-    <script src="js/main.js"></script>
-    </body>
+  </body>
 </html>
