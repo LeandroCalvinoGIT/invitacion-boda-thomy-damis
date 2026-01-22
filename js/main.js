@@ -43,46 +43,43 @@ setInterval(() => {
 
 }, 1000);
 
-
-// CARROUSEL
+// CAROUSEL
 document.querySelectorAll(".carousel").forEach(carousel => {
     const track = carousel.querySelector(".carousel-track");
-    let slides = Array.from(track.children);
-    let index = 0;
-    let slideWidth = slides[0].getBoundingClientRect().width;
 
-    function cloneSlides() {
-        slides.forEach(slide => {
-            track.appendChild(slide.cloneNode(true));
-        });
-    }
+    let speed = 0.4;
+    let pos = 0;
+    let paused = false;
 
-    cloneSlides();
+    // duplicar contenido UNA sola vez
+    track.innerHTML += track.innerHTML;
 
-    function updateSizes() {
-        slides = Array.from(track.children);
-        slideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${index * slideWidth}px)`;
-    }
+    const slides = Array.from(track.children);
+    const slideWidth = slides[0].offsetWidth + 19.2;
+    const totalWidth = slideWidth * (slides.length / 2);
 
-    function move() {
-        index++;
-        track.style.transform = `translateX(-${index * slideWidth}px)`;
-
-        if (index >= slides.length / 2) {
-            setTimeout(() => {
-                track.style.transition = "none";
-                index = 0;
-                track.style.transform = "translateX(0)";
-                track.offsetHeight;
-                track.style.transition = "transform 0.6s ease";
-            }, 600);
+    function animate() {
+        if (!paused) {
+            pos += speed;
+            if (pos >= totalWidth) pos = 0;
+            track.style.transform = `translateX(${-pos}px)`;
         }
+        requestAnimationFrame(animate);
     }
 
-    setInterval(move, 3500);
-    window.addEventListener("resize", updateSizes);
+    animate();
+
+    /* pausa SOLO al hover de una imagen */
+    carousel.querySelectorAll(".carousel-slide").forEach(slide => {
+        slide.addEventListener("mouseenter", () => paused = true);
+        slide.addEventListener("mouseleave", () => paused = false);
+    });
+
+    window.addEventListener("resize", () => {
+        pos = 0;
+    });
 });
+
 
 
 
