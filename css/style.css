@@ -44,6 +44,12 @@ body {
     color: var(--dark);
     background-color: var(--background);
     line-height: 1.6;
+
+    background: linear-gradient(
+        to bottom,
+        #e6dfd4,
+        #d8d0c5
+    );
 }
 
 /* DEBUGG DE BORDES */
@@ -186,14 +192,30 @@ body {
     width: 100%;
     padding: 2rem 1rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
 }
 
 #countdown h2 {
+    /* position: relative; */
+    width: fit-content;
     text-align: center;
     margin-bottom: 1.5rem;
+    background-color: var(--background);
+    border-radius: 32px;
+
+    padding:  0.6rem 1.6rem;
+    /* box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.08); */
 }
 
 .countdown-container {
+    /* position: relative; */
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(8px, 2vw, 16px);
@@ -201,16 +223,41 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+
+    /* background-color: var(--background);
+    border-radius: 32px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.08); */
 }
 
+/* .countdown-container::after, #countdown h2::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0) 60%,
+        rgba(0,0,0,0.12) 100%
+    );
+    pointer-events: none;
+} */
+
 .countdown-container > div {
-    background: rgba(255, 255, 255, 0.85);
+/*     background: rgba(255, 255, 255, 0.85);*/    
+    background-color: var(--background);
     border-radius: 14px;
     padding: clamp(0.75rem, 2vw, 1.2rem);
     text-align: center;
     color: var(--gold);
 
     box-sizing: border-box;
+
+    /* box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.08); */
 }
 
 .countdown-container .number {
@@ -277,20 +324,64 @@ section {
     text-align: center;
 }
 
-section:nth-child(odd):not(.carousel) {
+section:nth-child(even):not(.carousel) {
 
-    /* background-color: var(--soft); */
-    background-image: url(../assets/img/textura-ladrillos-blancos.jpg);
+    background-color: var(--soft);
+    /* background-image: url(../assets/img/textura-ladrillos-blancos.jpg);
+    background-size: cover;
+    background-position: center; */
+    /* border-radius: 32px; */
+    /* margin: 1rem auto; */
+
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.95),
+        rgba(240, 235, 228, 0.95)
+    );
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.18),
+        0 4px 10px rgba(0, 0, 0, 0.06);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+
+    outline: 1px solid rgba(255,255,255,0.4);
+    outline-offset: -1px;
+}
+
+section:nth-child(even):not(.carousel,#confirmacion)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0) 60%,
+        rgba(0,0,0,0.08) 100%
+    );
+    pointer-events: none;
+}
+
+section:nth-child(odd):not(.carousel,#countdown){
+    background-image: url(../assets/img/textura-papel.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 32px;
-    /* margin: 1rem auto; */
+
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.18),
         0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-section:nth-child(even):not(.carousel){
+#countdown{
+    background-color: var(--dark) ;
+}
+
+#confirmacion{
     background-image: url(../assets/img/textura-papel.jpg);
     background-size: cover;
     background-position: center;
