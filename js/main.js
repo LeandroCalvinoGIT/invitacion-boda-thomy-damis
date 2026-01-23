@@ -43,6 +43,50 @@ setInterval(() => {
 
 }, 1000);
 
+// MUSICA
+const audio = document.getElementById("bg-music");
+const btn = document.getElementById("music-toggle");
+
+let started = false;
+
+function tryPlay() {
+    audio.volume = 0.4;
+    audio.play()
+        .then(() => {
+        started = true;
+        btn.classList.add("playing");
+        btn.textContent = "❚❚";
+        })
+        .catch(() => {
+        // Autoplay bloqueado → se activará con interacción
+        });
+}
+
+// intento inmediato
+tryPlay();
+
+// fallback: primer gesto del usuario
+["click", "scroll", "touchstart"].forEach(evt => {
+    window.addEventListener(evt, () => {
+        if (!started) tryPlay();
+    }, { once: true });
+    });
+
+    // control manual
+    btn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        btn.classList.add("playing");
+        btn.textContent = "❚❚";
+    } else {
+        audio.pause();
+        btn.classList.remove("playing");
+        btn.textContent = "▶";
+    }
+});
+
+
+
 // CAROUSEL
 document.querySelectorAll(".carousel").forEach(carousel => {
     const track = carousel.querySelector(".carousel-track");
