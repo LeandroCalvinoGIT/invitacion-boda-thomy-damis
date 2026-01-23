@@ -1,3 +1,47 @@
+// ANIMACION INICIAL
+document.addEventListener("DOMContentLoaded", () => {
+
+    const preloader = document.getElementById("preloader");
+    const enterBtn  = document.getElementById("enter-site");
+    const hero      = document.querySelector(".hero-content");
+    const nav       = document.querySelector("nav");
+    const music     = document.getElementById("bg-music");
+    const music_btn = document.getElementById("music-toggle")
+
+    /* bloquear scroll */
+    document.body.classList.add("preload");
+
+    enterBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        /* música */
+        if (music) {
+            music.play().catch(() => {});
+        }
+
+        /* liberar scroll */
+        document.body.classList.remove("preload");
+
+        /* esconder preload */
+        setTimeout(() => {
+            preloader.classList.add("hide");
+        }, 300);
+
+        /* animar hero DESPUÉS */
+        setTimeout(() => {
+            hero.classList.add("animate");
+        }, 900);
+
+        /* mostrar nav al final */
+        setTimeout(() => {
+            music_btn.classList.add("visible")
+            nav.classList.add("visible");
+        }, 4800);
+    });
+});
+
+
+
 // SCROLL FADEUP
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(

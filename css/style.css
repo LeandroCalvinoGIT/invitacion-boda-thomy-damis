@@ -227,7 +227,7 @@ body {
     letter-spacing: 0.05em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 305px) {
     .countdown-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -694,4 +694,162 @@ footer {
             0 0 25px rgba(201,166,107,0.35);
         z-index: 10;
     }
+}
+
+/* =====================
+    HERO – CINEMATIC FADE
+===================== */
+
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* se activa SOLO cuando entrás */
+.hero-content.animate > * {
+    animation: heroCinematic 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* delays */
+.hero-content.animate .hero-subtitle { animation-delay: 0.6s; }
+.hero-content.animate .hero-title    { animation-delay: 1.4s; }
+.hero-content.animate .hero-date     { animation-delay: 2.4s; }
+
+
+@keyframes heroCinematic {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+    NAV – CINEMATIC REVEAL
+===================== */
+
+.main-nav {
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(6px);
+    pointer-events: none;
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.4s ease;
+}
+
+#music-toggle{
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(6px);
+    pointer-events: none;
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.4s ease;
+}
+
+.main-nav.visible, #music-toggle.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    pointer-events: auto;
+}
+
+/* =====================================================
+    PRE-PANTALLA CINEMATOGRÁFICA
+===================================================== */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../assets/img/textura-papel-marron.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transition: opacity 1.6s ease, visibility 1.6s ease;
+}
+
+#enter-site{
+    border-radius: 32px;
+    background-image: url(../assets/img/textura-papel.jpg);
+}
+/* overlay oscuro elegante */
+#preloader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* contenido */
+.preloader-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.preloader-content.animate {
+    animation: preloaderFadeUp 2s ease forwards;
+}
+
+.preloader-text {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+#enter-site {
+    padding: 0.9rem 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    background: rgba(255,255,255,0.9);
+    color: #222;
+    border: 1px solid rgba(255,255,255,0.9);
+
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+#enter-site:hover {
+    background: white;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+
+/* ocultar preloader */
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* animación inicial */
+@keyframes preloaderFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.preload {
+    overflow: hidden;
 }
