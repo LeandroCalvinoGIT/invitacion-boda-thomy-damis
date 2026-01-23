@@ -277,14 +277,23 @@ section {
     text-align: center;
 }
 
-section:nth-child(odd) {
+section:nth-child(odd):not(.carousel) {
 
-    background-color: var(--soft);
+    /* background-color: var(--soft); */
+    background-image: url(../assets/img/textura-ladrillos-blancos.jpg);
+    background-size: cover;
+    background-position: center;
     border-radius: 32px;
     /* margin: 1rem auto; */
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.18),
         0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+section:nth-child(even):not(.carousel){
+    background-image: url(../assets/img/textura-papel.jpg);
+    background-size: cover;
+    background-position: center;
 }
 h2 {
     font-size: 1.6rem;
@@ -302,8 +311,6 @@ p {
     font-size: 0.95rem;
     margin-bottom: 0.8rem;
 }
-
-
 
 /* =====================================================
     BUTTONS
@@ -768,8 +775,10 @@ footer {
     z-index: 10000;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     background-image: url("../assets/img/textura-papel-marron.jpg");
     background-size: cover;
@@ -778,10 +787,92 @@ footer {
     transition: opacity 1.6s ease, visibility 1.6s ease;
 }
 
-#enter-site{
-    border-radius: 32px;
-    background-image: url(../assets/img/textura-papel.jpg);
+#enter-site {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
+
+.envelope {
+    position: relative;
+    width: 180px;
+    height: 120px;
+}
+
+
+/* BASE */
+.envelope div {
+    position: absolute;
+}
+
+/* fondo */
+.back {
+    inset: 0;
+    background: #f5f0e8;
+    border-radius: 6px;
+    z-index: 0;
+}
+
+/* lados */
+.left {
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #eee6d8;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+}
+
+.right {
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #eee6d8;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    z-index: 1;
+}
+
+.bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e8dfcf;
+    clip-path: polygon(0 100%, 50% 40%, 100% 100%);
+    z-index: 2;
+}
+
+/* FLAP (la tapa) */
+.flap {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: #f0e7d7;
+    clip-path: polygon(0 0, 100% 0, 50% 80%);
+    transform-origin: top center;
+    transition: transform 0.9s cubic-bezier(.25,.8,.25,1);
+    z-index: 4;
+}
+
+/* ABRIR */
+#enter-site:hover .flap,
+#enter-site:focus .flap {
+    transform: rotateX(180deg);
+}
+
+.envelope::after {
+    border-top-color: #f3eadb; /* mismo color del sobre */
+}
+
+.envelope::after {
+    display: none;
+}
+
+
 /* overlay oscuro elegante */
 #preloader::before {
     content: "";
@@ -803,33 +894,25 @@ footer {
 }
 
 .preloader-text {
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-family: 'Great Vibes', 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-style: italic;
+    font-weight: 500;
+
+    color: #f5f0e8;
+    letter-spacing: 0.05em;
+
     margin-bottom: 2rem;
+
+    text-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
 }
 
 #enter-site {
-    padding: 0.9rem 2.8rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    background: rgba(255,255,255,0.9);
-    color: #222;
-    border: 1px solid rgba(255,255,255,0.9);
-
-    cursor: pointer;
-    transition: all 0.6s ease;
+    background: none;
+    border: none;
+    padding: 0;
 }
-
-#enter-site:hover {
-    background: white;
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-
 
 /* ocultar preloader */
 #preloader.hide {
@@ -853,3 +936,6 @@ footer {
 body.preload {
     overflow: hidden;
 }
+
+
+

@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.classList.add("hide");
         }, 300);
 
+        /* PREVENCION ANTI SCROLL Y */
+        /* forzar salto inmediato */
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        location.hash = "#hero";
+
         /* animar hero DESPUÉS */
         setTimeout(() => {
             hero.classList.add("animate");
